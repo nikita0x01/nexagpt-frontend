@@ -1,0 +1,282 @@
+/* ChatWindow.css */
+
+/* Main container */
+/* Main container */
+.chatWindow {
+  background-color: var(--bg);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text);
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  max-width: 700px; /* Limit navbar width to chat content */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--border); /* Only under chat, not full sidebar */
+  box-sizing: border-box;
+  margin: 0 auto; /* Center the navbar */
+}
+
+
+.navbar span {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Theme toggle button */
+.themeToggle {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  height: 32px;
+  width: 38px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.themeToggle:hover {
+  background: var(--hover);
+}
+
+.userIconDiv span {
+  display: inline-block;
+  background-color: var(--accent);
+  color: var(--text);
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Chat area */
+.chatArea {
+  flex: 1;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+/* Chat input section */
+.chatInput {
+  width: 100%;
+  max-width: 700px;
+  padding: 1rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userInput {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.userInput input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 20px;
+  border: none;
+  background-color: var(--input-bg);
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.userInput input:focus {
+  outline: none;
+  box-shadow: 0 0 5px var(--accent);
+}
+
+/* Submit button */
+#submit {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: var(--text);
+  font-size: 1.2rem;
+}
+
+#submit:hover {
+  color: var(--accent);
+}
+
+/* Info text below input */
+.info {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 0.5rem;
+  text-align: left;
+  width: 100%;
+}
+
+
+/* ==========================
+   🔽 User Dropdown Menu CSS
+   ========================== */
+
+.dropDown {
+  position: absolute;
+  top: 4rem; /* adjust based on your navbar height */
+  right: 6rem;
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  width: 150px;
+  z-index: 999;
+  padding: 0.3rem 0.5rem;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.dropDownItems {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  color: var(--muted);
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dropDownItems i {
+  font-size: 16px;
+  color: var(--muted);
+  width: 20px;
+  text-align: center;
+}
+
+.dropDownItems:hover {
+  background: var(--hover);
+  color: var(--text);
+}
+
+.dropDownItems:hover i {
+  color: var(--text);
+}
+
+/* Small fade animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Modal styles */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  width: 90%;
+  max-width: 420px;
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.tabs button {
+  flex: 1;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.tabs button.active,
+.tabs button:hover {
+  background: var(--hover);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form input {
+  background: var(--input-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.modalActions button {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.modalActions button:hover {
+  background: var(--hover);
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--panel-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  z-index: 1100;
+  pointer-events: none;
+}

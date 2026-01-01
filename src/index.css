@@ -1,0 +1,45 @@
+/* Theme variables and base styles */
+:root {
+  --bg: #212121;
+  --text: #ececec;
+  --muted: #b4b4b4;
+  --border: #333333;
+  --border-strong: rgba(255, 255, 255, 0.5);
+  --sidebar-bg: #171717;
+  --hover: rgba(255, 255, 255, 0.15);
+  --accent: #339cff;
+  --user-bubble-bg: #323232;
+  --gpt-bubble-bg: #444444;
+  --input-bg: #2c2c2c;
+  --panel-bg: #0d1117;
+  --scrollbar-thumb: #555555;
+  --scrollbar-thumb-hover: #777777;
+}
+
+html.light {
+  --bg: #ffffff;
+  --text: #111111;
+  --muted: #444444;
+  --border: #e5e5e5;
+  --border-strong: rgba(0, 0, 0, 0.3);
+  --sidebar-bg: #f7f7f7;
+  --hover: rgba(0, 0, 0, 0.06);
+  --accent: #339cff;
+  --user-bubble-bg: #f1f1f1;
+  --gpt-bubble-bg: #eaeaea;
+  --input-bg: #ffffff;
+  --panel-bg: #ffffff;
+  --scrollbar-thumb: #bbbbbb;
+  --scrollbar-thumb-hover: #999999;
+}
+
+html, body, #root {
+  height: 100%;
+  background-color: var(--bg);
+}
+
+* {
+  color: var(--text);
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
